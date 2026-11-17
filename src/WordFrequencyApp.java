@@ -2,9 +2,8 @@ public class WordFrequencyApp {
     public static void main(String[] args) {
         WordCounter counter = new WordCounter();
 
-        counter.addWord("Java");
-        counter.addWord("java");
-        counter.addWord("Python");
+        counter.addText("Java is fun. Java, Python, and JAVA!");
+        counter.addText("Python is great.");
 
         System.out.println("java: " + counter.getCount("java"));
         System.out.println("python: " + counter.getCount("Python"));
