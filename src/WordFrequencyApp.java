@@ -8,5 +8,6 @@ public class WordFrequencyApp {
         System.out.println("java: " + counter.getCount("java"));
         System.out.println("python: " + counter.getCount("Python"));
         System.out.println("rust: " + counter.getCount("rust"));
+        System.out.println("Most frequent: " + counter.getMostFrequentWord());
     }
 }

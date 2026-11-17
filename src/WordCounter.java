@@ -1,7 +1,8 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class WordCounter {
-    private HashMap<String, Integer> counts;
+    private Map<String, Integer> counts;
 
     public WordCounter() {
         counts = new HashMap<>();
@@ -28,5 +29,19 @@ public class WordCounter {
     // Returns how many times a word appears (0 if never seen)
     public int getCount(String word) {
         return counts.getOrDefault(word.toLowerCase(), 0);
+    }
+
+    // Returns the word with the highest count (null if no words yet)
+    public String getMostFrequentWord() {
+        String bestWord = null;
+        int bestCount = 0;
+
+        for (Map.Entry<String, Integer> entry : counts.entrySet()) {
+            if (entry.getValue() > bestCount) {
+                bestWord = entry.getKey();
+                bestCount = entry.getValue();
+            }
+        }
+        return bestWord;
     }
 }
